@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NewsItem from './NewsItem';
-import dotenv from 'dotenv'
-dotenv.config()
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 export class News extends Component {   
     constructor() {
@@ -12,8 +12,8 @@ export class News extends Component {
         }
     };
     async componentDidMount(){
-    //    let  url="https://newsapi.org/v2/everything?q=tesla&from=2023-04-29&sortBy=publishedAt&apiKey=77298cfe9e844fa7846e3edd23056c21";
-    let url=process.env.newsKey;
+       let  url="https://newsapi.org/v2/everything?q=tesla&from=2023-04-29&sortBy=publishedAt&apiKey=77298cfe9e844fa7846e3edd23056c21";
+    // let url=process.env.newsKey;
        let data = await fetch(url);
        let response = await data.json();
        this.setState({articles:response.articles})
